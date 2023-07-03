@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'ui/pages/home_index_page.dart';
 import 'ui/pages/setting_index_page.dart';
@@ -41,7 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -50,6 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
     print("_MyHomePageState===build()");
     print("_MyHomePageState===_currIndex==" + _currIndex.toString());
     setState(() {});
+    Navigator.of(context);
+    // compute((message) => null, message)
+    // scheduleMicrotask(() { })
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,

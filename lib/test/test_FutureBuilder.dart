@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/test/base/base_test_page.dart';
 
-class FutureBuilderPage extends StatelessWidget {
-  const FutureBuilderPage({super.key});
+class TestFutureBuilderPage extends BaseTestPage {
+  const TestFutureBuilderPage({super.key});
 
+@override
+  String buildTitle() {
+    return "TestFutureBuilderPage";
+  }
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("FutureBuilderPage"),
-      ),
-      body: BodyWidget(),
-    );
+  Widget buildBody(BuildContext context) {
+    return const BodyWidget();
   }
 }
 

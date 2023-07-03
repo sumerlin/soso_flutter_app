@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/test/base/base_test_page.dart';
 
-class DialogPage extends StatelessWidget {
-  const DialogPage({super.key});
+class TestDialogPage extends BaseTestPage {
+  const TestDialogPage({super.key});
 
+@override
+  String buildTitle() {
+
+  return "DialogPage";
+  }
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("DialogPage"),
-      ),
-      body: _BodyWidget(),
-    );
+  Widget buildBody(BuildContext context) {
+    return _BodyWidget();
   }
 }
 
 class _BodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ElevatedButton(
           onPressed: () {

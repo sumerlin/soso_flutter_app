@@ -1,31 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/test/base/base_test_page.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: "",
-    home: Scaffold(
-      appBar: AppBar(
-        title: const Text("TestRenderObject"),
-      ),
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          width: 200,
-          height: 200,
-          color: Colors.lime,
-          child: const ShadowRenderObjectWidget(
-            offset: 10,
-            child: Icon(
-              Icons.home,
-              size: 100,
-            ),
+class TestRenderObjectPage extends BaseTestPage{
+  const TestRenderObjectPage({super.key});
+
+  @override
+  String buildTitle() {
+    return "TestRenderObjectPage";
+  }
+
+
+  @override
+  Widget buildBody(BuildContext context) {
+    return  Center(
+      child: Container(
+        alignment: Alignment.center,
+        width: 200,
+        height: 200,
+        color: Colors.lime,
+        child: const ShadowRenderObjectWidget(
+          offset: 10,
+          child: Icon(
+            Icons.home,
+            size: 100,
           ),
         ),
       ),
-    ),
-  ));
+    );
+  }
 }
 
 class ShadowRenderObjectWidget extends SingleChildRenderObjectWidget {

@@ -61,7 +61,7 @@ class HomeIndexPage extends StatelessWidget {
                   TextButton.icon(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MyNotificationPage()));
+                          MaterialPageRoute(builder: (context) => TestNotificationPage()));
                     },
                     icon: Icon(Icons.add),
                     label: Text("MyNotificationPage"),
@@ -69,7 +69,7 @@ class HomeIndexPage extends StatelessWidget {
                   TextButton.icon(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => FutureBuilderPage()));
+                          MaterialPageRoute(builder: (context) => TestFutureBuilderPage()));
                     },
                     icon: Icon(Icons.add),
                     label: Text("FutureBuilderPage"),
@@ -77,7 +77,7 @@ class HomeIndexPage extends StatelessWidget {
                   TextButton.icon(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => DialogPage()));
+                          MaterialPageRoute(builder: (context) => TestDialogPage()));
                     },
                     icon: Icon(Icons.add),
                     label: Text("DialogPage"),

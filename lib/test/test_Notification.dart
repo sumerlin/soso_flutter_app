@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/test/base/base_test_page.dart';
 
-class MyNotificationPage extends StatelessWidget {
-  const MyNotificationPage({super.key});
+class TestNotificationPage extends BaseTestPage {
+  const TestNotificationPage({super.key});
+
 
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+  Widget buildBody(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("MyNotificationPage"),
+        title: const Text("TestNotificationPage"),
       ),
-      body: BodyWidget(),
+      body: const BodyWidget(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           //下面是收不到， 通知是向上通知的。
           MyNotification("Floating").dispatch(context);
@@ -27,8 +28,6 @@ class BodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    // ScrollUpdateNotification
     return NotificationListener<MyNotification>(
       onNotification: (nt) {
         print("父级收到通知：" + nt.message);
