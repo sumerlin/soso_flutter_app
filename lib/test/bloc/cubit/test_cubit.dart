@@ -12,6 +12,7 @@ class TestCubit extends Cubit<TestCubitState>{
     loggerSingle("执行了...increment()");
     state.count++;
     emit(state.clone());
+    // emit(state);
 
   }
 

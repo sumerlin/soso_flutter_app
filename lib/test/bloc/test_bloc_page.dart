@@ -49,24 +49,29 @@ class TestBlocPage extends BaseTestPage {
         Padding(padding: EdgeInsets.all(50)),
         Text("bloc模式："),
         BlocProvider(
-          create: (context) => TestBloc(),
-          child: Center(
-            child: Column(
-              children: [
-                BlocBuilder<TestBloc, TestState>(
-                  builder: (context, state) {
-                    return Text("count:" + state.count.toString());
-                  },
+          create: (_) => TestBloc(),
+          child: Builder(
+            builder: (ctx) {
+              return Center(
+                child: Column(
+                  children: [
+                    BlocBuilder<TestBloc, TestState>(
+                      builder: (context, state) {
+                        return Text("count:" + state.count.toString());
+                      },
+                    ),
+                    Padding(padding: EdgeInsets.all(10)),
+                    FloatingActionButton(
+                      child: Text("点击"),
+                      onPressed: () {
+                        // BlocProvider.of<TestBloc>(context)..add(AddTestEvent());
+                        ctx.read<TestBloc>().add(AddTestEvent());
+                      },
+                    ),
+                  ],
                 ),
-                Padding(padding: EdgeInsets.all(10)),
-                FloatingActionButton(
-                  child: Text("点击"),
-                  onPressed: () {
-                    BlocProvider.of<TestBloc>(context)..add(AddTestEvent());
-                  },
-                ),
-              ],
-            ),
+              );
+            }
           ),
         ),
       ],
