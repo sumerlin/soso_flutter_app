@@ -97,7 +97,13 @@ class TestFutureStreamPage extends BaseTestPage {
             ),
             ElevatedButton(
               onPressed: () => controller.close(),
+
               child: Text("关闭流"),
+            ),
+
+            ElevatedButton(
+              onPressed: () => getStream(),
+              child: Text("重新启动流"),
             ),
           ],
         );
@@ -120,4 +126,5 @@ class TestFutureStreamPage extends BaseTestPage {
     // });
     return controller.stream;
   }
+
 }

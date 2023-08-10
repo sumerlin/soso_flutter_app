@@ -6,6 +6,7 @@ import 'test/bloc/test_bloc_page.dart';
 import 'test/test_FutureBuilder.dart';
 import 'test/test_Notification.dart';
 import 'test/test_RenderObject.dart';
+import 'test/test_animation.dart';
 import 'test/test_future_stream.dart';
 import 'test/test_state_life.dart';
 import 'test/test_thread.dart';
@@ -69,6 +70,11 @@ class _TestPageState extends State<_TestPage> {
             title: Text("test_Dialog"),
             onTap: () => PageManagerUtil.openPage(context, (context) => TestDialogPage()),
           ),
+          ListTile(
+            title: Text("test_animation"),
+            onTap: () => PageManagerUtil.openPage(context, (context) => TestAnimationPage()),
+          ),
+
           ListTile(
             title: Text("test_Notification"),
             onTap: () => PageManagerUtil.openPage(context, (context) => TestNotificationPage()),

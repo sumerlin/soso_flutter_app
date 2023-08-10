@@ -4,7 +4,6 @@ import 'package:flutter_app/test/base/base_test_page.dart';
 class TestNotificationPage extends BaseTestPage {
   const TestNotificationPage({super.key});
 
-
   @override
   Widget buildBody(BuildContext context) {
     return Scaffold(
@@ -15,7 +14,7 @@ class TestNotificationPage extends BaseTestPage {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          //下面是收不到， 通知是向上通知的。
+          ///下面是收不到， 通知是向上通知的。
           MyNotification("Floating").dispatch(context);
         },
       ),
@@ -39,8 +38,16 @@ class BodyWidget extends StatelessWidget {
           //返回true 表示终止了通知， FALSE 继续上传
           return true;
         },
-        child: ListView(
-          // children: List.generate(30, (index) => ItemWidget()).toList(),
+        child: Column(
+          children: [
+            Expanded(child: ListView(children: List.generate(30, (index) => ItemWidget()).toList())),
+            Builder(
+              builder: (ctx) {
+                return ElevatedButton(
+                    onPressed: () => MyNotification("summer")..dispatch(ctx), child: Text("发送通知"));
+              }
+            )
+          ],
         ),
       ),
     );
@@ -82,7 +89,6 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return SizedBox(
       height: 50,
       child: Container(
@@ -91,10 +97,6 @@ class ItemWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("测试"),
-            OutlinedButton(
-              onPressed: () => MyNotification("sumer").dispatch(context),
-              child: Text("发送通知"),
-            ),
           ],
         ),
       ),
